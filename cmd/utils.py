@@ -1,7 +1,7 @@
 import subprocess, os
 
-def kill_by_port(port=8000):
-    cmd = f'lsof -i:{port}'
+def kill_by_port(port=8080):
+    cmd = f'sudo lsof -i:{port}'
     cmd += " | awk '{print $2}'"
     pids = subprocess.getoutput(cmd).split('\n')
     for pid in pids:
